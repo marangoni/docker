@@ -1,0 +1,19 @@
+[global_config]
+  titlebar = false
+  use_custom_command = False
+
+[profiles]
+  [[default]]
+    background_color = "#1e1e1e"
+    foreground_color = "#ffffff"
+    palette = "#2e2e2e:#f28c22:#f5c01f:#5ad035:#30b5d8:#dd5a82:#7aabbf:#f2f2f2:#a6a6a6:#f28c22:#f5c01f:#5ad035:#30b5d8:#dd5a82:#7aabbf:#f2f2f2"
+    scrollback_lines = 10000
+    use_system_font = False
+    font = Monospace 10
+
+[keybindings]
+
+[colors]
+  background_color = "#2e2e2e"
+  foreground_color = "#d0d0d0"
+  palette = "#2e2e2e:#f28c22:#f5c01f:#5ad035:#30b5d8:#dd5a82:#7aabbf:#f2f2f2:#a6a6a6:#f28c22:#f5c01f:#5ad035:#30b5d8:#dd5a82:#7aabbf:#f2f2f2"
