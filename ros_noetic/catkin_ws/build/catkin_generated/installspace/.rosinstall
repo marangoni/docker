@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/luiz/Dev/docker/ros_noetic/catkin_ws/install/setup.sh
