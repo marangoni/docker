@@ -1,0 +1,50 @@
+# Docker run container
+
+0) Para criar a imagem:
+
+docker build -t lmarangoni75/ros:v4 .
+
+
+1) Executa a imagem para gerar um container
+
+# Run the ros-noetic-container and share Volumes folder and network configuration
+docker run -it --rm --user=$(id -u $USER):$(id -g $USER) --env="DISPLAY" --volume="/etc/group:/etc/group:ro" --volume="/etc/passwd:/etc/passwd:ro" --volume="/etc/shadow:/etc/shadow:ro" --volume="/etc/sudoers.d:/etc/sudoers.d:ro" --net host -v /home:/home -v ~/Volumes:/home/usr/ lmarangoni75/ros:v3
+
+docker run -it --rm --user=$(id -u $USER):$(id -g $USER) --env="DISPLAY" \
+  --volume="/etc/group:/etc/group:ro" --volume="/etc/passwd:/etc/passwd:ro" \
+  --volume="/etc/shadow:/etc/shadow:ro" --volume="/etc/sudoers.d:/etc/sudoers.d:ro" \
+  --net host -v /home/marangoni/Dev/projeto_1_PosDoc:/home/marangoni/Dev/projeto_1_PosDoc \
+  -v ~/Volumes:/home/usr/ lmarangoni75/ros:v3
+  
+docker run -it --rm \
+    --user=$(id -u $USER):$(id -g $USER) \
+    --env="DISPLAY=$DISPLAY" \
+    --volume="/etc/group:/etc/group:ro" \
+    --volume="/etc/passwd:/etc/passwd:ro" \
+    --volume="/etc/shadow:/etc/shadow:ro" \
+    --volume="/etc/sudoers.d:/etc/sudoers.d:ro" \
+    --net host \
+    -v /home:/home \
+    -v ~/Volumes:/home/usr/ \
+    -v /tmp/.X11-unix:/tmp/.X11-unix:rw \
+    -v /dev/dri:/dev/dri \
+    -e QT_X11_NO_MITSHM=1 \
+    -e LIBGL_ALWAYS_SOFTWARE=1 \
+    lmarangoni75/ros:v4 terminator & bash
+
+
+  
+  
+  
+ 2) Verificar se o container está rodando docker ps
+ 
+ 3) Abrir o Vscode - Remote explorer <> icon - lado esquerdo
+ 4) Clicar no icone embaixo <> e escolher Anexar ao container em execução
+ 5) Escolher o diretorio correto (ou abrir o workspace do VSCode) para visualização dos arquivos
+ 6) Abrir o terminal no VSCODE
+ 7) Executar terminator
+ 8) source /opt/ros/noetic/setup.bash
+ 9) roscore
+ 10) Compile o pacote com o catkin_make
+ 11) source devel/setup.bash 
+ 12) Voalá 
